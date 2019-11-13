@@ -1,5 +1,5 @@
-﻿$mylicense = "c:\temp\mylicense.flf"
-$imageName = "microsoft/dynamics-nav:2017-cu13"
+﻿$mylicense = "C:\temp\mylicence.flf"
+$imageName = "microsoft/dynamics-nav:2018"
 $sourceFolder = Join-Path $PSScriptRoot "Source"
 $containerName = Split-Path $PSScriptRoot -Leaf
 New-NavContainer -accept_eula `
@@ -7,6 +7,7 @@ New-NavContainer -accept_eula `
                  -imageName $imageName `
                  -auth Windows `
                  -licensefile $mylicense `
+                 -accept_outdated `
                  -updateHosts `
                  -includeCSide `
                  -additionalParameters @("--volume ${sourceFolder}:c:\source") 
